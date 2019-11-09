@@ -13,7 +13,7 @@ void setup() {
 }
 
 void draw() {
-  System.out.println(mouseY);
+  System.out.println("x value " + mouseX + " y value " + mouseY);
   
   PImage face = loadImage("bob.jpg");
   size(800,600);
@@ -26,21 +26,30 @@ void draw() {
   noStroke();
   ellipse(203, 268, 38, 53);
   
-  int x = mouseX+10;
-  if (mouseX >= 181 && mouseX <= 240 && mouseY >= 250 && mouseY <= 283){
+  if (mouseX > 197 && mouseX < 240 && mouseY >= 250 && mouseY <= 283){
   fill(0,0,0);
   ellipse(mouseX, mouseY, 10, 10);
   ellipse(mouseX + 180, mouseY, 10, 10);
   }
-  else if (mouseX < 190){
+  else if (mouseX <= 197){
   fill(0,0,0);
-  ellipse(190, mouseY, 10, 10);
-  ellipse(190 + 180, mouseY, 10, 10);
+  ellipse(197, mouseY, 10, 10);
+  ellipse(197 + 180, mouseY, 10, 10);
   }
-  else if (mouseX > 240){
+  else if (mouseX >= 241){
   fill(0,0,0);
-  ellipse(240, mouseY, 10, 10);
-  ellipse(240 + 170, mouseY, 10, 10);
+  ellipse(241, mouseY, 10, 10);
+  ellipse(241 + 180, mouseY, 10, 10);
   }
   //y limit 250, 283
+  else if (mouseY <= 250){
+  fill(0,0,0);
+  ellipse(mouseX, 250, 10, 10);
+  ellipse(mouseX + 180, 250, 10, 10);
+  }
+  else if (mouseY >= 283){
+  fill(0,0,0);
+  ellipse(mouseX, 283, 10, 10);
+  ellipse(mouseX + 180, 283, 10, 10);
+  }
 }
