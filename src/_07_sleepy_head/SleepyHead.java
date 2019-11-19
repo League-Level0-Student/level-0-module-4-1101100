@@ -20,20 +20,14 @@ public class SleepyHead {
          int wend = JOptionPane.showConfirmDialog(null, "Is it a weekend?", "Sleepy Head", JOptionPane.YES_NO_OPTION);
          int vac = JOptionPane.showConfirmDialog(null, "Is it vacation?", "Sleepy Head", JOptionPane.YES_NO_OPTION);
          
-         if (wend == 0 || vac == 0 && w == 1) {
-        	 isVacation = true;
+         if(w == 0) {
+         	JOptionPane.showMessageDialog(null, "get up lazybones");
          }
-         else if (w == 0 && wend == 1 && vac == 1) {
-        	 isWeekday = true;
+         if(vac == 0) {
+         JOptionPane.showMessageDialog(null, "sleep in");
          }
-         else if (w == 0 && wend == 1 && vac == 0) {
-        	 isVacation = true;
-         }
-         if (isVacation = true) {
-        	 JOptionPane.showMessageDialog(null, "“sleep in�?");
-         }
-         if (isWeekday = true) {
-        	 JOptionPane.showMessageDialog(null, "get up�?");
+         if(wend == 0) {
+        	 JOptionPane.showMessageDialog(null, "sleep in");
          }
         /*
          * Print “sleep in�? if it is a vacation or a weekend. If it’s a weekday,
