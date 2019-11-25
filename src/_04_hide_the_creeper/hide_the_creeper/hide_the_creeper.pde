@@ -12,26 +12,23 @@ void setup() {
 }
 
 void draw() {
-  image(creeper, cX, cY);
-  fill(255,0,0);
-  noStroke();
-  ellipse(mouseX, mouseY, 10,10);//in draw method
-  if (isNear(cX,mouseY) ==true){
-  fill(0,255,0);
-  noStroke();
-  ellipse(mouseX, mouseY, 10,10);//in draw method
+ image(creeper, cX, cY);     
+  if(mousePressed && isNear(mouseX, cX) && isNear(mouseY, cY)) {
+    fill(0,255,0);
+    noStroke();
+    ellipse(mouseX, mouseY, 25, 25);
+    println("You found it!");
   }
-  
+
+  else if(mousePressed) {
+    fill(255,0,0);
+    noStroke();
+    ellipse(mouseX, mouseY, 25, 25);
   }
-  
+}
 boolean isNear(int a, int b) {
 if (abs(a - b) < 10)
      return true;
 else
      return false;
 }
- 
-
-
-
- 
